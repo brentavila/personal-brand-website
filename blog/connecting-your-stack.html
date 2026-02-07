@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connecting Your Stack: Zapier vs Make vs Custom — Brent</title>
+  <meta name="description" content="When to use no-code automations, when to reach for APIs, and how to keep your marketing data in sync across platforms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="spartan-bg" aria-hidden="true">
+    <div class="spartan-bg-gradient"></div>
+    <div class="spartan-bg-pattern"></div>
+    <div class="spartan-bg-glow spartan-bg-glow-1"></div>
+    <div class="spartan-bg-glow spartan-bg-glow-2"></div>
+    <div class="spartan-bg-shapes">
+      <span class="spartan-shape spartan-shape-1"></span>
+      <span class="spartan-shape spartan-shape-2"></span>
+      <span class="spartan-shape spartan-shape-3"></span>
+      <span class="spartan-shape spartan-shape-4"></span>
+      <span class="spartan-shape spartan-shape-5"></span>
+      <span class="spartan-shape spartan-shape-6"></span>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">B<span class="accent">.</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="index.html" class="nav-link">Blog</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="section blog-post-page">
+    <div class="container container-narrow">
+      <a href="index.html" class="blog-back-link">&larr; All posts</a>
+      <header class="blog-post-header">
+        <time class="blog-post-date" datetime="2025-11-22">November 22, 2025</time>
+        <h1 class="blog-post-title">Connecting Your Stack: Zapier vs Make vs Custom</h1>
+      </header>
+      <div class="blog-post-body">
+        <p>Marketing runs on more tools than ever: CRM, ads, email, analytics, support. Keeping data in sync and workflows running usually means choosing between no-code connectors (Zapier, Make) and custom API work. Here’s when to use which—and how to keep everything talking.</p>
+
+        <h2>Zapier: speed and simplicity</h2>
+        <p>Zapier is best when you need a connection live in hours, with minimal logic. One trigger, one or two actions, straightforward mapping. It’s great for “when someone fills this form, add them to the CRM and send a welcome email.” Tasks can get expensive at scale, and complex branching or multi-step logic gets messy. Use it for simple, high-value automations and for testing ideas before you invest in something heavier.</p>
+
+        <h2>Make (Integromat): logic and control</h2>
+        <p>Make gives you a visual canvas with real branching, filters, and data transformation. You can build flows that route leads by source, retry on failure, and handle large batches more cost-effectively than Zapier in many cases. The learning curve is steeper, but for multi-step workflows (e.g. “form → CRM → segment by lead score → different email sequence”) Make is often the better fit. Use it when you need if/then logic, error handling, or more than a simple trigger–action chain.</p>
+
+        <h2>Custom APIs: when no-code isn’t enough</h2>
+        <p>Reach for custom code when: the platform has no (or a broken) connector, you need real-time sync or high volume, or you’re doing something the GUI can’t express (e.g. custom attribution, complex transformations). A small script or serverless function that runs on a schedule or webhook can be more reliable and cheaper at scale than hundreds of Zapier tasks. The tradeoff is maintenance and dev time—so use custom where no-code clearly can’t deliver.</p>
+
+        <h2>Keeping data in sync</h2>
+        <p>Whatever you choose, treat one system as source of truth for each entity (e.g. “CRM is source of truth for contact data”). Push changes from there into other tools rather than syncing bidirectionally without a plan. Map fields once in a doc, handle edge cases (duplicates, unsubscribes, lead status changes), and monitor for failed runs. A few robust, well-mapped flows beat a web of overlapping zaps that conflict or duplicate data.</p>
+
+        <h2>Bottom line</h2>
+        <p>Use Zapier for simple, fast connections; Make for logic-heavy workflows; and custom APIs when no-code can’t do the job or doesn’t scale. Design around a clear source of truth and keep your integration map simple.</p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Brent. All rights reserved.</p>
+      <a href="index.html" class="back-to-top">More posts</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

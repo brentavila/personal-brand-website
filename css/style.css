@@ -13,6 +13,13 @@
   --accent-hover: #00e5ff;
   --accent-glow: rgba(0, 188, 212, 0.15);
   --border: #2a2a2a;
+  /* Spartan theme */
+  --spartan-bronze: #b8860b;
+  --spartan-bronze-dim: rgba(184, 134, 11, 0.12);
+  --spartan-red: #8b2500;
+  --spartan-red-dim: rgba(139, 37, 0, 0.08);
+  --spartan-stone: #1c1917;
+  --spartan-ember: rgba(205, 127, 50, 0.06);
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Space Grotesk', 'Inter', sans-serif;
   --nav-height: 64px;
@@ -43,6 +50,179 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Spartan theme background
+   ============================================ */
+.spartan-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--spartan-stone);
+}
+
+.spartan-bg-gradient {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 30%, var(--spartan-red-dim) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 60% at 80% 70%, var(--spartan-bronze-dim) 0%, transparent 45%),
+    radial-gradient(ellipse 100% 80% at 50% 50%, var(--spartan-ember) 0%, transparent 60%);
+  animation: spartanGradientShift 18s ease-in-out infinite alternate;
+}
+
+.spartan-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(90deg, var(--spartan-bronze) 1px, transparent 1px),
+    linear-gradient(0deg, var(--spartan-bronze) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: spartanPatternMove 40s linear infinite;
+}
+
+.spartan-bg-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    105deg,
+    transparent,
+    transparent 60px,
+    var(--spartan-bronze) 60px,
+    var(--spartan-bronze) 61px
+  );
+  opacity: 0.03;
+  animation: spartanLines 25s linear infinite;
+}
+
+.spartan-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: spartanGlowFloat 20s ease-in-out infinite;
+}
+
+.spartan-bg-glow-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--spartan-bronze);
+  top: -10%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.spartan-bg-glow-2 {
+  width: 350px;
+  height: 350px;
+  background: var(--spartan-red);
+  bottom: -15%;
+  right: -5%;
+  animation-delay: -10s;
+  animation-duration: 24s;
+}
+
+.spartan-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.spartan-shape {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  opacity: 0.06;
+  animation: spartanShapeFloat 22s ease-in-out infinite;
+}
+
+/* Chevron / Lambda-like triangles */
+.spartan-shape-1 {
+  border-width: 0 20px 36px 20px;
+  border-color: transparent transparent var(--spartan-bronze) transparent;
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.spartan-shape-2 {
+  border-width: 36px 20px 0 20px;
+  border-color: var(--spartan-bronze) transparent transparent transparent;
+  top: 60%;
+  right: 15%;
+  animation-delay: -4s;
+  animation-duration: 26s;
+}
+
+.spartan-shape-3 {
+  border-width: 0 20px 36px 20px;
+  border-color: transparent transparent var(--spartan-red) transparent;
+  bottom: 25%;
+  left: 20%;
+  animation-delay: -8s;
+  animation-duration: 20s;
+}
+
+.spartan-shape-4 {
+  border-width: 36px 20px 0 20px;
+  border-color: var(--spartan-red) transparent transparent transparent;
+  top: 35%;
+  right: 25%;
+  animation-delay: -12s;
+}
+
+.spartan-shape-5 {
+  border-width: 0 20px 36px 20px;
+  border-color: transparent transparent var(--spartan-bronze) transparent;
+  top: 75%;
+  right: 35%;
+  animation-delay: -2s;
+  animation-duration: 28s;
+}
+
+.spartan-shape-6 {
+  border-width: 36px 20px 0 20px;
+  border-color: var(--spartan-bronze) transparent transparent transparent;
+  top: 45%;
+  left: 5%;
+  animation-delay: -6s;
+  animation-duration: 24s;
+}
+
+@keyframes spartanGradientShift {
+  0% { transform: scale(1) translate(0, 0) rotate(0deg); }
+  100% { transform: scale(1.1) translate(2%, -2%) rotate(2deg); }
+}
+
+@keyframes spartanPatternMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 48px 48px; }
+}
+
+@keyframes spartanLines {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(61px); }
+}
+
+@keyframes spartanGlowFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  33% { transform: translate(3%, 5%) scale(1.05); opacity: 0.4; }
+  66% { transform: translate(-2%, -3%) scale(0.95); opacity: 0.35; }
+}
+
+@keyframes spartanShapeFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(8px, -12px) rotate(5deg); }
+  50% { transform: translate(-5px, 8px) rotate(-3deg); }
+  75% { transform: translate(10px, 5px) rotate(2deg); }
 }
 
 a {
@@ -79,7 +259,8 @@ ul {
 }
 
 .section-alt {
-  background-color: var(--bg-secondary);
+  background-color: rgba(17, 17, 17, 0.6);
+  position: relative;
 }
 
 .section-title {
@@ -300,16 +481,43 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: var(--nav-height) 24px 60px;
   position: relative;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(0, 188, 212, 0.08) 0%, transparent 60%),
-    var(--bg-primary);
+    radial-gradient(ellipse 100% 80% at 50% 50%, rgba(0, 0, 0, 0.4) 0%, transparent 70%),
+    radial-gradient(ellipse at 50% 0%, rgba(0, 188, 212, 0.06) 0%, transparent 50%);
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  max-width: var(--container-width);
+  width: 100%;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 520px;
+  text-align: left;
+}
+
+.hero-image-wrap {
+  flex-shrink: 0;
+  width: min(320px, 36vw);
+  max-width: 100%;
+}
+
+.hero-headshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  /* Blend grey background into dark theme so it appears transparent */
+  mix-blend-mode: multiply;
+  filter: contrast(1.05);
 }
 
 .hero-greeting {
@@ -333,8 +541,6 @@ ul {
   color: var(--text-secondary);
   margin-bottom: 36px;
   max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hero .btn {
@@ -591,6 +797,99 @@ ul {
   font-weight: 500;
 }
 
+.blog-section-intro {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+.blog-section-intro a {
+  font-weight: 500;
+}
+
+/* Blog page (listing) */
+.blog-page {
+  padding-top: calc(var(--nav-height) + 48px);
+}
+
+.blog-back-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.blog-back-link:hover {
+  color: var(--accent);
+}
+
+.blog-page-intro {
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: -24px auto 48px;
+  font-size: 1.05rem;
+}
+
+.blog-list-grid .blog-title a {
+  color: inherit;
+}
+
+.blog-list-grid .blog-title a:hover {
+  color: var(--accent);
+}
+
+/* Blog post (single) */
+.blog-post-page {
+  padding-top: calc(var(--nav-height) + 48px);
+}
+
+.container-narrow {
+  max-width: 680px;
+}
+
+.blog-post-header {
+  margin-bottom: 32px;
+}
+
+.blog-post-date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.blog-post-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
+.blog-post-body {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.blog-post-body p {
+  margin-bottom: 1.25em;
+}
+
+.blog-post-body h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.blog-post-body h2:first-of-type {
+  margin-top: 1.5em;
+}
+
 /* ============================================
    Contact
    ============================================ */
@@ -719,6 +1018,21 @@ ul {
 @media (max-width: 768px) {
   .section {
     padding: 72px 0;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-image-wrap {
+    width: min(260px, 70vw);
+    order: -1;
   }
 
   /* Mobile nav */
