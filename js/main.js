@@ -4,18 +4,39 @@
   // ── Mobile Navigation Toggle ──
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
+  const navBackdrop = document.getElementById('nav-backdrop');
+
+  function openMenu() {
+    navToggle.classList.add('active');
+    navMenu.classList.add('open');
+    if (navBackdrop) navBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    navToggle.classList.remove('active');
+    navMenu.classList.remove('open');
+    if (navBackdrop) navBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
   navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('open');
+    if (navMenu.classList.contains('open')) closeMenu();
+    else openMenu();
   });
 
-  // Close menu when a nav link is clicked
-  navMenu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('open');
-    });
+  if (navBackdrop) {
+    navBackdrop.addEventListener('click', closeMenu);
+  }
+
+  const navMenuClose = document.getElementById('nav-menu-close');
+  if (navMenuClose) {
+    navMenuClose.addEventListener('click', closeMenu);
+  }
+
+  // Close menu when any link is clicked (nav links + "View My Work" / "Get in Touch")
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
   // ── Navbar scroll styling ──
