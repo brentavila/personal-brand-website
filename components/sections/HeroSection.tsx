@@ -9,28 +9,8 @@ import { GithubIcon, LinkedinIcon, XIcon } from "@/components/ui/social-icons";
 import { siteConfig } from "@/lib/site-config";
 
 const RemotionPlayer = dynamic(
-  () =>
-    import("@remotion/player").then((mod) => {
-      const { Player } = mod;
-      return function RemotionPlayerWrapper() {
-        return import("@/components/animations/HeroComposition").then(
-          ({ HeroCompositionComponent }) => (
-            <Player
-              component={HeroCompositionComponent}
-              durationInFrames={150}
-              fps={30}
-              compositionWidth={1100}
-              compositionHeight={500}
-              style={{ width: "100%", height: "100%" }}
-              loop
-              autoPlay
-              controls={false}
-            />
-          )
-        );
-      };
-    }),
-  { ssr: false }
+  () => import("@/components/animations/RemotionHero").then((m) => m.RemotionHero),
+  { ssr: false, loading: () => <div className="w-full h-full" /> }
 );
 
 const fadeUp = {
