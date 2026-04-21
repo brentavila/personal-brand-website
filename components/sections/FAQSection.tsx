@@ -23,6 +23,10 @@ const faqs = [
     a: "I can direct creative — copy angles, format recommendations, hooks, and performance analysis — but I don't produce videos or photo shoots. If you need a full creative production team, I can point you in the right direction and brief them on what the platform needs.",
   },
   {
+    q: "How do you use AI on client work?",
+    a: "Paid media and measurement stay human-led — strategy, guardrails, and accountability stay with me. I use Claude Code, LLMs, and agentic workflows to speed up research, briefs, specs, internal tooling, and QA so you get sharper execution without cutting corners on the numbers.",
+  },
+  {
     q: "What's your availability like and how do I get started?",
     a: "I take on a small number of clients at a time so I can actually focus on your results. The best first step is to reach out via the contact form below with a quick description of what you're working on. I'll respond within one business day.",
   },

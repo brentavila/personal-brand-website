@@ -74,9 +74,11 @@ export function HeroSection() {
               custom={0.35}
               className="text-text-secondary text-lg leading-relaxed mb-3 max-w-[520px]"
             >
-              I help brands acquire customers and automate growth. Paid campaigns
-              across Google, Meta, and LinkedIn — combined with marketing automations
-              that keep working after the ad spend stops.
+              I lead with digital advertising: paid search and social, creative testing,
+              and scaling campaigns on Google, Meta, and LinkedIn. Behind the scenes I
+              use Claude Code, LLMs, and agentic workflows to move faster on specs,
+              tooling, and QA — then tie it together with marketing automations,
+              analytics, and attribution so results stay measurable.
             </motion.p>
 
             <motion.p

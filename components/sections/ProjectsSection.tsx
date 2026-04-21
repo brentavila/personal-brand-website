@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { BarChart2, Zap, Target, Settings } from "lucide-react";
+import { BarChart2, Bot, Zap, Target, Settings } from "lucide-react";
 
 const projects = [
   {
@@ -17,6 +17,13 @@ const projects = [
     description:
       "End-to-end paid campaigns across Google, Meta, and LinkedIn. Audience research, creative testing, conversion tracking, and ROAS optimization for ecommerce and lead gen.",
     tags: ["Google Ads", "Meta Ads", "LinkedIn"],
+  },
+  {
+    icon: Bot,
+    title: "Claude Code, LLMs, and Agentic Workflows",
+    description:
+      "AI is how I ship faster, not a substitute for judgment in the ad account. I use Claude Code and LLM-native workflows for internal tools, structured prompts, lightweight agents, and repeatable QA — so strategy and builds move at the same pace as the campaigns.",
+    tags: ["Claude Code", "LLMs", "Agentic patterns"],
   },
   {
     icon: Zap,

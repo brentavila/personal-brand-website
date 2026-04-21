@@ -26,14 +26,15 @@ export function AboutSection() {
               </div>
 
               <p className="text-text-secondary leading-relaxed mb-4">
-                I&apos;ve been running paid campaigns and building automations for 8+ years. From
-                audience research and creative testing to funnel design and workflow builds, I help
-                brands figure out what works and then scale it.
+                I&apos;ve spent 8+ years in the ad platforms first — audience research, creative
+                testing, and turning winning signals into scaled spend. That&apos;s still the core
+                of what I do for brands.
               </p>
               <p className="text-text-secondary leading-relaxed">
-                I combine analytics, creative testing, and automation tools into systems that keep
-                producing results. When I&apos;m not in the platforms, I&apos;m learning new ones
-                and writing about what I find.
+                Today I also lean hard into Claude Code, LLMs, and agentic patterns to ship
+                internal tools, structured prompts, and automation specs faster. Pair that with
+                analytics, attribution, and ops workflows, and you get systems that keep producing
+                after the campaign calendar gets busy.
               </p>
             </div>
           </ScrollReveal>

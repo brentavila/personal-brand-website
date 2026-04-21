@@ -14,6 +14,17 @@ const skillCategories = [
     ],
   },
   {
+    title: "AI and agentic development",
+    skills: [
+      "Claude Code",
+      "LLM workflows",
+      "Agentic patterns",
+      "Prompt and eval design",
+      "Cursor",
+      "APIs",
+    ],
+  },
+  {
     title: "Marketing",
     skills: [
       "Funnel Strategy",

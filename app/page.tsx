@@ -15,10 +15,10 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.shortName} — Digital Advertising, Marketing and Automations`,
+  title: `${siteConfig.shortName} — ${siteConfig.titleSuffix}`,
   description: siteConfig.description,
   openGraph: {
-    title: `${siteConfig.shortName} — Digital Advertising, Marketing and Automations`,
+    title: `${siteConfig.shortName} — ${siteConfig.titleSuffix}`,
     description: siteConfig.description,
     type: "website",
     url: siteConfig.url,

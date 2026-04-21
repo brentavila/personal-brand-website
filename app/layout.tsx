@@ -22,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.shortName} — Digital Advertising, Marketing and Automations`,
+    default: `${siteConfig.shortName} — ${siteConfig.titleSuffix}`,
     template: `%s — ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
