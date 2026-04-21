@@ -1,17 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/ui/social-icons";
 import { siteConfig } from "@/lib/site-config";
-
-const RemotionPlayer = dynamic(
-  () => import("@/components/animations/RemotionHero").then((m) => m.RemotionHero),
-  { ssr: false, loading: () => <div className="w-full h-full" /> }
-);
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -22,18 +16,51 @@ const fadeUp = {
   }),
 };
 
+const shapes = [
+  { top: "15%", left: "8%", size: 10, opacity: 0.18, delay: "0s" },
+  { top: "55%", right: "12%", size: 14, opacity: 0.14, delay: "3s" },
+  { top: "30%", right: "25%", size: 8, opacity: 0.12, delay: "6s" },
+  { top: "70%", left: "20%", size: 12, opacity: 0.1, delay: "9s" },
+  { top: "85%", right: "40%", size: 7, opacity: 0.16, delay: "12s" },
+  { top: "10%", left: "55%", size: 9, opacity: 0.12, delay: "15s" },
+];
+
 export function HeroSection() {
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center pt-16 overflow-hidden"
     >
-      {/* Remotion background layer */}
-      <div
-        className="absolute inset-0 -z-10 opacity-60"
-        aria-hidden="true"
-      >
-        <RemotionPlayer />
+      {/* Animated hero-specific glows */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10 pointer-events-none">
+        <div
+          className="absolute rounded-full animate-spartan-glow"
+          style={{
+            width: 600,
+            height: 600,
+            top: "-20%",
+            right: "-10%",
+            background: "radial-gradient(circle, rgba(0,188,212,0.06) 0%, transparent 70%)",
+            filter: "blur(60px)",
+          }}
+        />
+        {shapes.map((s, i) => (
+          <span
+            key={i}
+            className="absolute animate-spartan-shape"
+            style={{
+              top: s.top,
+              left: "left" in s ? s.left : undefined,
+              right: "right" in s ? (s as { right: string }).right : undefined,
+              width: 0,
+              height: 0,
+              borderLeft: `${s.size}px solid transparent`,
+              borderRight: `${s.size}px solid transparent`,
+              borderBottom: `${s.size * 1.7}px solid rgba(184,134,11,${s.opacity})`,
+              animationDelay: s.delay,
+            }}
+          />
+        ))}
       </div>
 
       <div className="max-w-container mx-auto px-6 w-full py-24">
