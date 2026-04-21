@@ -19,10 +19,10 @@ export function AboutSection() {
           <ScrollReveal delay={0.1}>
             <div className="glass-card p-8">
               <div
-                className="w-20 h-20 rounded-full bg-gradient-to-br from-[#00bcd4]/20 to-[#00bcd4]/5 border border-[rgba(0,188,212,0.3)] flex items-center justify-center mb-6"
+                className="w-20 h-20 rounded-full bg-gradient-to-br from-[#E87C0C]/20 to-[#E87C0C]/5 border border-[rgba(232,124,12,0.3)] flex items-center justify-center mb-6"
                 aria-hidden="true"
               >
-                <span className="font-heading font-bold text-2xl text-[#00bcd4]">B</span>
+                <span className="font-heading font-bold text-2xl text-[#E87C0C]">B</span>
               </div>
 
               <p className="text-text-secondary leading-relaxed mb-4">
@@ -43,7 +43,7 @@ export function AboutSection() {
               {stats.map((stat, i) => (
                 <div
                   key={i}
-                  className="glass-card p-6 flex items-center gap-6 hover:border-[rgba(0,188,212,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                  className="glass-card p-6 flex items-center gap-6 hover:border-[rgba(232,124,12,0.3)] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <span className="font-heading font-bold text-3xl gradient-text min-w-[80px]">
                     {stat.value}

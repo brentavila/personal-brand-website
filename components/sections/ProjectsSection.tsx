@@ -54,10 +54,10 @@ export function ProjectsSection() {
             const Icon = project.icon;
             return (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <Card className="glass-card h-full hover:border-[rgba(0,188,212,0.3)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,188,212,0.08)] transition-all duration-300">
+                <Card className="glass-card h-full hover:border-[rgba(232,124,12,0.3)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(232,124,12,0.08)] transition-all duration-300">
                   <CardHeader>
-                    <div className="w-10 h-10 rounded-lg bg-[rgba(0,188,212,0.1)] flex items-center justify-center mb-3">
-                      <Icon size={20} className="text-[#00bcd4]" />
+                    <div className="w-10 h-10 rounded-lg bg-[rgba(232,124,12,0.1)] flex items-center justify-center mb-3">
+                      <Icon size={20} className="text-[#E87C0C]" />
                     </div>
                     <CardTitle>{project.title}</CardTitle>
                   </CardHeader>

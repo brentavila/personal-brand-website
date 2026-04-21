@@ -55,7 +55,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                 onClick={onClose}
                 className="font-heading font-bold text-xl text-text-primary"
               >
-                B<span className="text-[#00bcd4]">.</span>
+                B<span className="text-[#E87C0C]">.</span>
               </Link>
               <button
                 onClick={onClose}
@@ -102,7 +102,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                 <p className="text-xs text-text-muted mb-2 uppercase tracking-wider">Contact</p>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-sm text-[#00bcd4] hover:text-[#00e5ff] transition-colors"
+                  className="text-sm text-[#E87C0C] hover:text-[#FF9520] transition-colors"
                 >
                   {siteConfig.email}
                 </a>
@@ -112,7 +112,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                     href={siteConfig.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-muted hover:text-[#00bcd4] transition-colors"
+                    className="text-text-muted hover:text-[#E87C0C] transition-colors"
                     aria-label="GitHub"
                   >
                     <GithubIcon size={20} />
@@ -121,7 +121,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                     href={siteConfig.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-muted hover:text-[#00bcd4] transition-colors"
+                    className="text-text-muted hover:text-[#E87C0C] transition-colors"
                     aria-label="LinkedIn"
                   >
                     <LinkedinIcon size={20} />
@@ -130,7 +130,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                     href={siteConfig.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-muted hover:text-[#00bcd4] transition-colors"
+                    className="text-text-muted hover:text-[#E87C0C] transition-colors"
                     aria-label="X (Twitter)"
                   >
                     <XIcon size={20} />

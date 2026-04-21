@@ -103,7 +103,7 @@ export function ContactSection() {
                 <p className="text-xs text-text-muted uppercase tracking-wider mb-2">Email</p>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-text-secondary hover:text-[#00bcd4] transition-colors"
+                  className="text-text-secondary hover:text-[#E87C0C] transition-colors"
                 >
                   {siteConfig.email}
                 </a>
@@ -116,7 +116,7 @@ export function ContactSection() {
                     href={siteConfig.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-[#00bcd4] transition-colors text-sm"
+                    className="flex items-center gap-2 text-text-secondary hover:text-[#E87C0C] transition-colors text-sm"
                   >
                     <GithubIcon size={18} /> GitHub
                   </a>
@@ -124,7 +124,7 @@ export function ContactSection() {
                     href={siteConfig.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-[#00bcd4] transition-colors text-sm"
+                    className="flex items-center gap-2 text-text-secondary hover:text-[#E87C0C] transition-colors text-sm"
                   >
                     <LinkedinIcon size={18} /> LinkedIn
                   </a>
@@ -132,7 +132,7 @@ export function ContactSection() {
                     href={siteConfig.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-[#00bcd4] transition-colors text-sm"
+                    className="flex items-center gap-2 text-text-secondary hover:text-[#E87C0C] transition-colors text-sm"
                   >
                     <XIcon size={18} /> X
                   </a>

@@ -40,7 +40,7 @@ export function HeroSection() {
             height: 600,
             top: "-20%",
             right: "-10%",
-            background: "radial-gradient(circle, rgba(0,188,212,0.06) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(232,124,12,0.06) 0%, transparent 70%)",
             filter: "blur(60px)",
           }}
         />
@@ -56,7 +56,7 @@ export function HeroSection() {
               height: 0,
               borderLeft: `${s.size}px solid transparent`,
               borderRight: `${s.size}px solid transparent`,
-              borderBottom: `${s.size * 1.7}px solid rgba(184,134,11,${s.opacity})`,
+              borderBottom: `${s.size * 1.7}px solid rgba(232,124,12,${s.opacity})`,
               animationDelay: s.delay,
             }}
           />
@@ -126,7 +126,7 @@ export function HeroSection() {
                 href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-[#00bcd4] transition-colors"
+                className="text-text-muted hover:text-[#E87C0C] transition-colors"
                 aria-label="GitHub"
               >
                 <GithubIcon size={20} />
@@ -135,7 +135,7 @@ export function HeroSection() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-[#00bcd4] transition-colors"
+                className="text-text-muted hover:text-[#E87C0C] transition-colors"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={20} />
@@ -144,7 +144,7 @@ export function HeroSection() {
                 href={siteConfig.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-[#00bcd4] transition-colors"
+                className="text-text-muted hover:text-[#E87C0C] transition-colors"
                 aria-label="X (Twitter)"
               >
                 <XIcon size={20} />
@@ -161,7 +161,7 @@ export function HeroSection() {
             className="flex-shrink-0"
           >
             <div
-              className="relative rounded-full overflow-hidden border-2 border-[rgba(0,188,212,0.2)] shadow-[0_0_60px_rgba(0,188,212,0.1)]"
+              className="relative rounded-full overflow-hidden border-2 border-[rgba(232,124,12,0.2)] shadow-[0_0_60px_rgba(232,124,12,0.1)]"
               style={{ width: "min(300px, 70vw)", height: "min(300px, 70vw)" }}
             >
               <Image
@@ -185,7 +185,7 @@ export function HeroSection() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="text-xs text-text-muted uppercase tracking-widest">Scroll</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-[#00bcd4]/60 to-transparent" />
+          <div className="w-[1px] h-12 bg-gradient-to-b from-[#E87C0C]/60 to-transparent" />
         </motion.div>
       </div>
     </section>

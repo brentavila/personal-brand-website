@@ -44,7 +44,7 @@ export function SkillsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillCategories.map((category, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
-              <Card className="glass-card h-full hover:border-[rgba(0,188,212,0.3)] transition-all duration-300">
+              <Card className="glass-card h-full hover:border-[rgba(232,124,12,0.3)] transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-lg">{category.title}</CardTitle>
                 </CardHeader>

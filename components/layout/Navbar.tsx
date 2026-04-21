@@ -35,9 +35,9 @@ export function Navbar() {
         <div className="max-w-container mx-auto px-6 h-full flex items-center justify-between">
           <Link
             href="/"
-            className="font-heading font-bold text-xl text-text-primary hover:text-[#00bcd4] transition-colors"
+            className="font-heading font-bold text-xl text-text-primary hover:text-[#E87C0C] transition-colors"
           >
-            B<span className="text-[#00bcd4]">.</span>
+            B<span className="text-[#E87C0C]">.</span>
           </Link>
 
           {/* Desktop nav */}
@@ -46,7 +46,7 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="relative text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#00bcd4] after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#E87C0C] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.label}
                 </Link>

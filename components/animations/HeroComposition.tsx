@@ -84,7 +84,7 @@ export function HeroCompositionComponent() {
           right: "-10%",
           width: "400px",
           height: "400px",
-          background: "radial-gradient(circle, rgba(0,188,212,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(232,124,12,0.08) 0%, transparent 70%)",
           filter: "blur(50px)",
           opacity: gradientOpacity * 0.6,
         }}
@@ -128,7 +128,7 @@ export function HeroCompositionComponent() {
             fontWeight: 700,
             color: "#f0f0f0",
             lineHeight: 1.1,
-            background: "linear-gradient(135deg, #f0f0f0 60%, #00bcd4)",
+            background: "linear-gradient(135deg, #f0f0f0 60%, #E87C0C)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             marginBottom: "12px",

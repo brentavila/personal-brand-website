@@ -10,7 +10,7 @@ export function Footer() {
         </p>
         <Link
           href="#"
-          className="text-sm text-text-muted hover:text-[#00bcd4] transition-colors"
+          className="text-sm text-text-muted hover:text-[#E87C0C] transition-colors"
         >
           Back to top &uarr;
         </Link>
