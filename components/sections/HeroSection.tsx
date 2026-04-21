@@ -38,11 +38,11 @@ export function HeroSection() {
               initial="hidden"
               animate="visible"
               custom={0.05}
-              className="inline-flex items-center gap-2 bg-[rgba(232,124,12,0.1)] border border-[rgba(232,124,12,0.3)] rounded-full px-4 py-1.5 mb-6"
+              className="inline-flex items-center gap-2 bg-bg-secondary border border-border rounded-full px-4 py-1.5 mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-[#E87C0C] animate-pulse" />
-              <span className="text-xs font-medium text-[#E87C0C] uppercase tracking-wider">
-                Open to new clients
+              <span className="w-2 h-2 rounded-full bg-text-muted" aria-hidden />
+              <span className="text-xs font-medium text-text-muted uppercase tracking-wider">
+                Not accepting new clients
               </span>
             </motion.div>
 
@@ -99,10 +99,10 @@ export function HeroSection() {
               className="flex flex-wrap gap-4 mb-8"
             >
               <Button asChild size="lg" variant="default">
-                <Link href="#contact">Get a Free Strategy Call</Link>
+                <Link href="/projects">See My Work</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/projects">See My Work</Link>
+                <Link href="#contact">Get in touch</Link>
               </Button>
             </motion.div>
 

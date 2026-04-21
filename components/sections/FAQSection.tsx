@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "What does your process look like?",
-    a: "We start with a strategy call to understand your goals, current setup, and where the biggest gaps are. From there I'll put together a plan with clear priorities. Most engagements run on a monthly retainer with weekly check-ins, though I also do project-based work for defined scopes.",
+    a: "When I'm taking on new work, it usually starts with a strategy call to understand goals, current setup, and gaps—then a prioritized plan. Most past engagements ran on a monthly retainer with weekly check-ins, with some project-based scopes. I'm not accepting new clients right now.",
   },
   {
     q: "Do you handle the creative side too, or just the media buying?",
@@ -28,11 +28,11 @@ const faqs = [
   },
   {
     q: "What's your availability like and how do I get started?",
-    a: "I take on a small number of clients at a time so I can actually focus on your results. The best first step is to reach out via the contact form below with a quick description of what you're working on. I'll respond within one business day.",
+    a: "I'm not taking on new client engagements at the moment. You're welcome to read the blog, browse projects for examples of how I think, or send a short note through the contact form—I'll read it when I can, but I can't promise new work or a call.",
   },
   {
     q: "What does it cost to work with you?",
-    a: "Pricing depends on scope. Retainers for ongoing paid media management start in the $2,500/month range. Automation builds are typically project-based. Send me a message with what you're thinking and I'll give you a straight answer.",
+    a: "I'm not currently accepting new projects, so this is for reference only. Historically, retainers for ongoing paid media management have often started in the $2,500/month range, and automation builds were typically scoped as projects. If that changes in the future, I'll update the site.",
   },
 ];
 

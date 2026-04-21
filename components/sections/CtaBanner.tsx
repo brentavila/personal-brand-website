@@ -8,8 +8,8 @@ interface CtaBannerProps {
 }
 
 export function CtaBanner({
-  headline = "Ready to stop guessing and start scaling?",
-  sub = "I'm currently accepting a small number of new clients. If your timing is right, let's talk.",
+  headline = "Thanks for being here",
+  sub = "I'm not taking on new client engagements right now. Explore the blog and projects—or send a note through the contact form if something's a fit for later.",
 }: CtaBannerProps) {
   return (
     <section className="py-16">
@@ -23,10 +23,10 @@ export function CtaBanner({
             }}
           >
             {/* Availability badge */}
-            <div className="inline-flex items-center gap-2 bg-[rgba(232,124,12,0.1)] border border-[rgba(232,124,12,0.3)] rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#E87C0C] animate-pulse" />
-              <span className="text-xs font-medium text-[#E87C0C] uppercase tracking-wider">
-                Now accepting new clients
+            <div className="inline-flex items-center gap-2 bg-bg-secondary border border-border rounded-full px-4 py-1.5 mb-6">
+              <span className="w-2 h-2 rounded-full bg-text-muted" aria-hidden />
+              <span className="text-xs font-medium text-text-muted uppercase tracking-wider">
+                Not accepting new clients
               </span>
             </div>
 
@@ -39,10 +39,10 @@ export function CtaBanner({
 
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">
-                <Link href="/#contact">Let&apos;s Talk</Link>
+                <Link href="/blog">Read the blog</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/projects">See My Work First</Link>
+                <Link href="/projects">See my work</Link>
               </Button>
             </div>
           </div>

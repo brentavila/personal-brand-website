@@ -12,9 +12,9 @@ import { CheckCircle, Clock, MessageSquare, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 const trustSignals = [
-  { icon: Clock, text: "Response within 1 business day" },
-  { icon: MessageSquare, text: "Free 30-minute strategy call" },
-  { icon: Phone, text: "No pressure, just a conversation" },
+  { icon: Clock, text: "I read messages when I can; replies may be slower while I'm focused elsewhere" },
+  { icon: MessageSquare, text: "Not taking new client projects at this time" },
+  { icon: Phone, text: "Best for follow-ups with existing relationships or select inquiries" },
 ];
 
 export function ContactSection() {
@@ -44,17 +44,17 @@ export function ContactSection() {
       <div className="max-w-container mx-auto px-6">
         <ScrollReveal>
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-[rgba(232,124,12,0.08)] border border-[rgba(232,124,12,0.25)] rounded-full px-4 py-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#E87C0C] animate-pulse" />
-              <span className="text-xs font-medium text-[#E87C0C] uppercase tracking-wider">
-                Accepting new clients — limited spots
+            <div className="inline-flex items-center gap-2 bg-bg-secondary border border-border rounded-full px-4 py-1.5">
+              <span className="w-2 h-2 rounded-full bg-text-muted" aria-hidden />
+              <span className="text-xs font-medium text-text-muted uppercase tracking-wider">
+                Not accepting new clients
               </span>
             </div>
           </div>
-          <h2 className="section-title mb-4">Start the Conversation</h2>
+          <h2 className="section-title mb-4">Get in touch</h2>
           <p className="text-center text-text-muted max-w-lg mx-auto mb-16 leading-relaxed">
-            Tell me what you&apos;re working on. I&apos;ll reply within one business day and we can
-            jump on a free call to see if it&apos;s a fit.
+            I&apos;m not taking on new client engagements right now. You can still send a message—I
+            may not be able to start new work, but I read thoughtful notes when I have bandwidth.
           </p>
         </ScrollReveal>
 

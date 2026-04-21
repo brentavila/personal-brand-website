@@ -9,14 +9,15 @@ function InlineCta() {
           Working on paid campaigns or automations?
         </p>
         <p className="text-text-muted text-xs leading-relaxed">
-          I help brands cut wasted spend and build systems that scale. Free 30-minute call to start.
+          I&apos;m not taking new client projects right now. More writing and examples live on the
+          blog and projects page.
         </p>
       </div>
       <Link
-        href="/#contact"
+        href="/blog"
         className="flex-shrink-0 inline-flex items-center justify-center h-9 px-5 rounded-lg bg-[#E87C0C] text-bg-primary text-sm font-semibold hover:bg-[#FF9520] transition-colors whitespace-nowrap"
       >
-        Let&apos;s talk
+        More posts
       </Link>
     </div>
   );

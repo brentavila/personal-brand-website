@@ -94,13 +94,12 @@ export default function BlogPostPage({ params }: Props) {
                   8+ years helping brands grow through paid media and smart workflows.
                 </p>
                 <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                  If this resonated, the best next step is a quick conversation. I offer a free
-                  30-minute strategy call — no pitch, just a real look at what&apos;s working and
-                  what isn&apos;t in your current setup.
+                  I&apos;m not taking on new client engagements right now. If this post was useful,
+                  there&apos;s more on the blog—and examples of how I work on the projects page.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Button asChild size="sm">
-                    <Link href="/#contact">Book a Free Strategy Call</Link>
+                    <Link href="/projects">View projects</Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
                     <Link href="/blog" className="text-text-muted">
