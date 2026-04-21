@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 20% 4%;
+    --foreground: 36 60% 94%;
+    --card: 30 15% 10%;
+    --card-foreground: 36 60% 94%;
+    --popover: 30 15% 10%;
+    --popover-foreground: 36 60% 94%;
+    --primary: 26 88% 48%;
+    --primary-foreground: 30 20% 4%;
+    --secondary: 30 10% 7%;
+    --secondary-foreground: 36 60% 94%;
+    --muted: 30 10% 7%;
+    --muted-foreground: 30 5% 60%;
+    --accent: 26 88% 48%;
+    --accent-foreground: 30 20% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 36 60% 94%;
+    --border: 30 12% 18%;
+    --input: 30 12% 18%;
+    --ring: 26 88% 48%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-body antialiased;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#E87C0C] to-[#FF9520] bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    background: rgba(28, 18, 8, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    @apply border border-border rounded-xl;
+  }
+
+  .section-title {
+    @apply font-heading font-bold text-center text-text-primary relative;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .section-title::after {
+    content: '';
+    @apply block w-14 h-[3px] bg-[#E87C0C] mx-auto mt-4 rounded-full;
+  }
+
+  .skill-badge {
+    @apply text-xs font-medium bg-[rgba(232,124,12,0.12)] text-[#E87C0C] border border-[rgba(232,124,12,0.3)] rounded-full px-3 py-1 transition-colors duration-200;
+  }
+
+  .skill-badge:hover {
+    @apply bg-[rgba(232,124,12,0.22)] border-[rgba(232,124,12,0.5)];
+  }
+}
