@@ -16,13 +16,10 @@ const fadeUp = {
   }),
 };
 
-const shapes = [
-  { top: "15%", left: "8%", size: 10, opacity: 0.18, delay: "0s" },
-  { top: "55%", right: "12%", size: 14, opacity: 0.14, delay: "3s" },
-  { top: "30%", right: "25%", size: 8, opacity: 0.12, delay: "6s" },
-  { top: "70%", left: "20%", size: 12, opacity: 0.1, delay: "9s" },
-  { top: "85%", right: "40%", size: 7, opacity: 0.16, delay: "12s" },
-  { top: "10%", left: "55%", size: 9, opacity: 0.12, delay: "15s" },
+const quickStats = [
+  { value: "8+", label: "Years" },
+  { value: "1,345+", label: "Campaigns" },
+  { value: "$2.4M+", label: "Revenue driven" },
 ];
 
 export function HeroSection() {
@@ -31,42 +28,24 @@ export function HeroSection() {
       id="hero"
       className="relative min-h-screen flex items-center pt-16 overflow-hidden"
     >
-      {/* Animated hero-specific glows */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10 pointer-events-none">
-        <div
-          className="absolute rounded-full animate-spartan-glow"
-          style={{
-            width: 600,
-            height: 600,
-            top: "-20%",
-            right: "-10%",
-            background: "radial-gradient(circle, rgba(232,124,12,0.06) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-        {shapes.map((s, i) => (
-          <span
-            key={i}
-            className="absolute animate-spartan-shape"
-            style={{
-              top: s.top,
-              left: "left" in s ? s.left : undefined,
-              right: "right" in s ? (s as { right: string }).right : undefined,
-              width: 0,
-              height: 0,
-              borderLeft: `${s.size}px solid transparent`,
-              borderRight: `${s.size}px solid transparent`,
-              borderBottom: `${s.size * 1.7}px solid rgba(232,124,12,${s.opacity})`,
-              animationDelay: s.delay,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="max-w-container mx-auto px-6 w-full py-24">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Text content */}
           <div className="flex-1 min-w-0">
+            {/* Availability badge */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.05}
+              className="inline-flex items-center gap-2 bg-[rgba(232,124,12,0.1)] border border-[rgba(232,124,12,0.3)] rounded-full px-4 py-1.5 mb-6"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#E87C0C] animate-pulse" />
+              <span className="text-xs font-medium text-[#E87C0C] uppercase tracking-wider">
+                Open to new clients
+              </span>
+            </motion.div>
+
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -81,45 +60,73 @@ export function HeroSection() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              custom={0.25}
-              className="font-heading font-bold text-text-primary mb-6 leading-[1.05]"
+              custom={0.22}
+              className="font-heading font-bold text-text-primary mb-5 leading-[1.05]"
               style={{ fontSize: "clamp(3rem, 7vw, 5rem)" }}
             >
-              <span className="gradient-text">Brent</span>
+              <span className="gradient-text">Brent Avila</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              custom={0.4}
-              className="text-text-secondary text-lg leading-relaxed mb-8 max-w-[520px]"
+              custom={0.35}
+              className="text-text-secondary text-lg leading-relaxed mb-3 max-w-[520px]"
             >
-              I run paid campaigns, build marketing automations, and help brands
-              grow without the guesswork. Eight-plus years of figuring out what
-              actually works and scaling it.
+              I help brands acquire customers and automate growth. Paid campaigns
+              across Google, Meta, and LinkedIn — combined with marketing automations
+              that keep working after the ad spend stops.
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.42}
+              className="text-text-muted text-sm mb-8 max-w-[480px]"
+            >
+              Based in Colorado. Working with teams across the US.
             </motion.p>
 
             <motion.div
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              custom={0.55}
-              className="flex flex-wrap gap-4 mb-10"
+              custom={0.52}
+              className="flex flex-wrap gap-4 mb-8"
             >
               <Button asChild size="lg" variant="default">
-                <Link href="#projects">View My Work</Link>
+                <Link href="#contact">Get a Free Strategy Call</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="#contact">Let&apos;s Talk</Link>
+                <Link href="#projects">See My Work</Link>
               </Button>
+            </motion.div>
+
+            {/* Quick stats row */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.62}
+              className="flex items-center gap-6 mb-8 pb-8 border-b border-border/40"
+            >
+              {quickStats.map((s, i) => (
+                <div key={i}>
+                  <p className="font-heading font-bold text-[#E87C0C] text-lg leading-none">
+                    {s.value}
+                  </p>
+                  <p className="text-text-muted text-xs mt-1">{s.label}</p>
+                </div>
+              ))}
             </motion.div>
 
             <motion.div
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              custom={0.65}
+              custom={0.7}
               className="flex items-center gap-5"
             >
               <a
@@ -160,18 +167,25 @@ export function HeroSection() {
             custom={0.3}
             className="flex-shrink-0"
           >
-            <div
-              className="relative rounded-full overflow-hidden border-2 border-[rgba(232,124,12,0.2)] shadow-[0_0_60px_rgba(232,124,12,0.1)]"
-              style={{ width: "min(300px, 70vw)", height: "min(300px, 70vw)" }}
-            >
-              <Image
-                src="/images/brent-headshot.png"
-                alt="Brent Avila"
-                fill
-                priority
-                className="object-cover object-top"
-                style={{ mixBlendMode: "multiply", filter: "contrast(1.05)" }}
-              />
+            <div className="relative">
+              <div
+                className="rounded-2xl overflow-hidden border border-[rgba(232,124,12,0.2)] shadow-[0_0_80px_rgba(232,124,12,0.08)]"
+                style={{ width: "min(320px, 80vw)", height: "min(380px, 95vw)" }}
+              >
+                <Image
+                  src="/images/brent-headshot.png"
+                  alt="Brent Avila — Digital Marketing and Automation Specialist"
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  style={{ mixBlendMode: "multiply", filter: "contrast(1.05)" }}
+                />
+              </div>
+              {/* Floating credential chip */}
+              <div className="absolute -bottom-4 -left-4 glass-card px-4 py-2.5 border border-[rgba(232,124,12,0.25)] shadow-lg">
+                <p className="text-xs font-semibold text-[#E87C0C]">Google Ads Certified</p>
+                <p className="text-[10px] text-text-muted">Meta Blueprint Certified</p>
+              </div>
             </div>
           </motion.div>
         </div>

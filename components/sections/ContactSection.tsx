@@ -7,9 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/ui/social-icons";
+import { CheckCircle, Clock, MessageSquare, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+
+const trustSignals = [
+  { icon: Clock, text: "Response within 1 business day" },
+  { icon: MessageSquare, text: "Free 30-minute strategy call" },
+  { icon: Phone, text: "No pressure, just a conversation" },
+];
 
 export function ContactSection() {
   const [sent, setSent] = useState(false);
@@ -29,7 +35,7 @@ export function ContactSection() {
       setLoading(false);
       setSent(true);
       form.reset();
-      setTimeout(() => setSent(false), 4000);
+      setTimeout(() => setSent(false), 5000);
     }, 800);
   }
 
@@ -37,23 +43,38 @@ export function ContactSection() {
     <section id="contact" className="py-24 md:py-[100px]">
       <div className="max-w-container mx-auto px-6">
         <ScrollReveal>
-          <h2 className="section-title mb-4">Get in Touch</h2>
-          <p className="text-center text-text-muted max-w-md mx-auto mb-16">
-            Working on something interesting? Send me a message and I&apos;ll get back to you.
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex items-center gap-2 bg-[rgba(232,124,12,0.08)] border border-[rgba(232,124,12,0.25)] rounded-full px-4 py-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#E87C0C] animate-pulse" />
+              <span className="text-xs font-medium text-[#E87C0C] uppercase tracking-wider">
+                Accepting new clients — limited spots
+              </span>
+            </div>
+          </div>
+          <h2 className="section-title mb-4">Start the Conversation</h2>
+          <p className="text-center text-text-muted max-w-lg mx-auto mb-16 leading-relaxed">
+            Tell me what you&apos;re working on. I&apos;ll reply within one business day and we can
+            jump on a free call to see if it&apos;s a fit.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto">
-          <ScrollReveal delay={0.1}>
-            <Card className="glass-card h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-4xl mx-auto">
+          <ScrollReveal delay={0.1} className="lg:col-span-3">
+            <Card className="glass-card">
               <CardHeader>
-                <CardTitle className="text-lg">Say hello</CardTitle>
+                <CardTitle className="text-lg">Send me a message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="space-y-1.5">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" name="name" placeholder="Your name" required />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <Label htmlFor="name">Name</Label>
+                      <Input id="name" name="name" placeholder="Your name" required />
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="company">Company</Label>
+                      <Input id="company" name="company" placeholder="Optional" />
+                    </div>
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="email">Email</Label>
@@ -61,30 +82,34 @@ export function ContactSection() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="you@example.com"
+                      placeholder="you@company.com"
                       required
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="budget">Monthly budget range</Label>
+                    <Input
+                      id="budget"
+                      name="budget"
+                      placeholder="e.g. $3k–$10k/mo, or just getting started"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="message">What are you working on?</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="What's on your mind?"
+                      placeholder="Tell me about your goals, what's working, what's not..."
                       className="min-h-[120px]"
                       required
                     />
                   </div>
 
-                  <Button
-                    type="submit"
-                    size="full"
-                    disabled={loading || sent}
-                  >
+                  <Button type="submit" size="full" disabled={loading || sent}>
                     {sent ? (
                       <span className="flex items-center gap-2">
                         <CheckCircle size={16} />
-                        Message sent
+                        Sent — I&apos;ll be in touch soon
                       </span>
                     ) : loading ? (
                       "Sending..."
@@ -97,46 +122,62 @@ export function ContactSection() {
             </Card>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <div className="flex flex-col gap-6 py-4">
-              <div>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-2">Email</p>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-text-secondary hover:text-[#E87C0C] transition-colors"
-                >
-                  {siteConfig.email}
-                </a>
-              </div>
+          <ScrollReveal delay={0.2} className="lg:col-span-2 flex flex-col gap-6">
+            <div className="glass-card p-6">
+              <p className="text-text-primary font-semibold text-sm mb-4">What to expect</p>
+              <ul className="space-y-4">
+                {trustSignals.map((s, i) => {
+                  const Icon = s.icon;
+                  return (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-[rgba(232,124,12,0.1)] flex items-center justify-center flex-shrink-0">
+                        <Icon size={15} className="text-[#E87C0C]" />
+                      </div>
+                      <span className="text-text-secondary text-sm">{s.text}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
 
-              <div>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-3">Find me</p>
-                <div className="flex items-center gap-4">
-                  <a
-                    href={siteConfig.social.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-[#E87C0C] transition-colors text-sm"
-                  >
-                    <GithubIcon size={18} /> GitHub
-                  </a>
-                  <a
-                    href={siteConfig.social.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-[#E87C0C] transition-colors text-sm"
-                  >
-                    <LinkedinIcon size={18} /> LinkedIn
-                  </a>
-                  <a
-                    href={siteConfig.social.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-[#E87C0C] transition-colors text-sm"
-                  >
-                    <XIcon size={18} /> X
-                  </a>
-                </div>
+            <div className="glass-card p-6">
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-2">Direct email</p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="text-[#E87C0C] hover:text-[#FF9520] transition-colors text-sm font-medium break-all"
+              >
+                {siteConfig.email}
+              </a>
+
+              <p className="text-xs text-text-muted uppercase tracking-wider mt-5 mb-3">Connect</p>
+              <div className="flex items-center gap-4">
+                <a
+                  href={siteConfig.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-[#E87C0C] transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon size={20} />
+                </a>
+                <a
+                  href={siteConfig.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-[#E87C0C] transition-colors"
+                  aria-label="GitHub"
+                >
+                  <GithubIcon size={20} />
+                </a>
+                <a
+                  href={siteConfig.social.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-[#E87C0C] transition-colors"
+                  aria-label="X"
+                >
+                  <XIcon size={20} />
+                </a>
               </div>
             </div>
           </ScrollReveal>

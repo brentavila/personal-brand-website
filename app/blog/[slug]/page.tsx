@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getBlogPost, getAllSlugs } from "@/lib/blog-data";
 import { BlogPostBody } from "@/components/blog/BlogPostBody";
 import { BlogPostingSchema } from "@/components/schema/BlogPostingSchema";
@@ -72,18 +73,43 @@ export default function BlogPostPage({ params }: Props) {
 
           <BlogPostBody post={post} />
 
-          <Separator className="mt-16 mb-8" />
+          <Separator className="mt-16 mb-10" />
 
-          <div className="flex items-center justify-between">
-            <Button asChild variant="ghost" size="sm" className="-ml-2">
-              <Link href="/blog" className="flex items-center gap-2 text-text-muted">
-                <ArrowLeft size={14} />
-                All posts
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="sm">
-              <Link href="/#contact">Work with me</Link>
-            </Button>
+          {/* Author bio CTA */}
+          <div className="rounded-xl border border-[rgba(232,124,12,0.2)] bg-[rgba(232,124,12,0.04)] p-7">
+            <div className="flex items-start gap-5">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border border-[rgba(232,124,12,0.25)] flex-shrink-0">
+                <Image
+                  src="/images/brent-headshot.png"
+                  alt="Brent Avila"
+                  fill
+                  className="object-cover object-top"
+                  style={{ mixBlendMode: "multiply" }}
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-text-primary font-semibold text-sm mb-0.5">Brent Avila</p>
+                <p className="text-text-muted text-xs mb-3">
+                  Digital advertising and marketing automation specialist based in Colorado.
+                  8+ years helping brands grow through paid media and smart workflows.
+                </p>
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  If this resonated, the best next step is a quick conversation. I offer a free
+                  30-minute strategy call — no pitch, just a real look at what&apos;s working and
+                  what isn&apos;t in your current setup.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button asChild size="sm">
+                    <Link href="/#contact">Book a Free Strategy Call</Link>
+                  </Button>
+                  <Button asChild variant="ghost" size="sm">
+                    <Link href="/blog" className="text-text-muted">
+                      Read more posts
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
