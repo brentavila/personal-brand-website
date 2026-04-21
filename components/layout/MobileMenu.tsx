@@ -87,7 +87,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
 
               <div className="mt-6 flex flex-col gap-3">
                 <Button asChild size="full" variant="default">
-                  <Link href="/#projects" onClick={onClose}>
+                  <Link href="/projects" onClick={onClose}>
                     View My Work
                   </Link>
                 </Button>

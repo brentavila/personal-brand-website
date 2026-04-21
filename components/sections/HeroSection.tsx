@@ -100,7 +100,7 @@ export function HeroSection() {
                 <Link href="#contact">Get a Free Strategy Call</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="#projects">See My Work</Link>
+                <Link href="/projects">See My Work</Link>
               </Button>
             </motion.div>
 

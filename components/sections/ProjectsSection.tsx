@@ -43,7 +43,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 md:py-[100px]">
+    <section id="services" className="py-24 md:py-[100px]">
       <div className="max-w-container mx-auto px-6">
         <ScrollReveal>
           <h2 className="section-title mb-16">What I Do</h2>

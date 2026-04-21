@@ -42,7 +42,7 @@ export function CtaBanner({
                 <Link href="/#contact">Let&apos;s Talk</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/#projects">See My Work First</Link>
+                <Link href="/projects">See My Work First</Link>
               </Button>
             </div>
           </div>
